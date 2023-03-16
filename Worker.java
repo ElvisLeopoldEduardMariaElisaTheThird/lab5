@@ -1,7 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
-
 public class Worker {
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -26,7 +25,6 @@ public class Worker {
         this.organization = organization;
     }
 
-    /**Setters*/
     public void setID(Integer id){this.id=id;}
     public void setName(String name){this.name=name;}
     public void setCoordinates(Coordinates coordinates){this.coordinates=coordinates;}
@@ -36,9 +34,6 @@ public class Worker {
     public void setEndDate(ZonedDateTime endDate){this.endDate=endDate;}
     public void setPosition(Position position){this.position=position;}
     public void setOrganization(Organization organization){this.organization=organization;}
-
-
-
     /**Getters*/
     public int getID() {return this.id;}
     public String getName() {return this.name;}
@@ -56,4 +51,9 @@ public class Worker {
         }
     }
     public Organization getOrganization() {return this.organization;}
+
+    @Override
+    public String toString(){
+        return (this.id +","+ this.name+","+this.coordinates+","+this.creationDate+","+this.salary+","+this.startDate+","+this.endDate+","+this.position.name());
+    }
 }

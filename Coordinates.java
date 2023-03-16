@@ -1,10 +1,12 @@
 public class Coordinates {
     private Long x; //Поле не может быть null
-    private Float y;
-
-    public Coordinates(){
-        this.x = 0L;
-        this.y = 0f;
+    private float y;
+    public Coordinates(Long x, float y){
+        this.x = x;
+        this.y = y;
+    }
+    public Coordinates(Long x){
+        this.x = x;
     }
 
     public Long getX(){return this.x;}
@@ -12,4 +14,8 @@ public class Coordinates {
 
     public void setX(){this.x = x;}
     public void setY(){this.y = y;}
+    @Override
+    public String toString(){
+        return (this.x + " "+ this.y);
+    }
 }
